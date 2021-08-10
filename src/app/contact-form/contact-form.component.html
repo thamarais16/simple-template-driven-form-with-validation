@@ -8,12 +8,12 @@
       <div class="form-group">
         <label for="firstName">First Name</label>
         <input 
-          ngModel 
+          [(ngModel)] = "firstName"
           name="firstName"  
           type="text" 
           class="form-control" 
           id="firstName" 
-          #firstNames="ngModel" 
+          #firstNames="ngModel"
           required
           pattern="Thamarai"
           minlength="3"
@@ -23,7 +23,6 @@
           <div *ngIf="firstNames.errors.pattern">Not matched pattern</div>
           <div *ngIf="firstNames.errors.required"> The field is required</div>
         </div>
-        {{firstNames.dirty}}
       </div>
       <div class="form-group">
         <label for="commment">Comment</label>
@@ -41,8 +40,32 @@
           commnents required
         </div>
       </div>
+
+      <div class="form-group">
+        <label for="desc">Desc</label>
+        <textarea 
+          ngModel 
+          name="desc" 
+          id="desc" 
+          cols="30" 
+          rows="10" 
+          class="form-control" 
+          #desc="ngModel" required>
+        </textarea>
+        value {{desc.value}}
+      </div>
     </form>
   </div>
 </div>
+
+<!-- Template Driven Form validation keys 
+1) dirty (default value is false) -- If the input value is changed atleat once  dirty will become true.
+2) pristine (default value is true) -- It is oppsite to dirty. If the value is changed atleat once pristine will become false.
+3) touched  (default value is false) -- If the input field is focussed in  and focussed out atleat once touched will become true.
+4) untouched (default value is true) --  It is oppsite to touched. If the input field is focussed in  and focussed out atleat once touched will become false.
+5) valid (default value is true) --  If any validators like required, pattern, minlength, maxlength etc.. is present and those validation conditions not matched in those cases it become false. If there is no validators it will be true as default.
+6) value -- returns value of that input field.
+-->
+
 
 
