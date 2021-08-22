@@ -6,7 +6,7 @@
   <div class="card-body">
     <form>
       <div class="form-group">
-        <label for="firstName">First Name</label>
+        <label for="firstName">First Name</label> 
         <input 
           [(ngModel)] = "firstName"
           name="firstName"  
@@ -65,6 +65,7 @@
 4) untouched (default value is true) --  It is oppsite to touched. If the input field is focussed in  and focussed out atleat once touched will become false.
 5) valid (default value is true) --  If any validators like required, pattern, minlength, maxlength etc.. is present and those validation conditions not matched in those cases it become false. If there is no validators it will be true as default.
 6) value -- returns value of that input field.
+7) submitted -- Returns true if the form is submitted. else false.
 -->
 
 
